@@ -1,11 +1,13 @@
 import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import CopilotToggle from './MessageInputActions/Copilot';
+// import CopilotToggle from './MessageInputActions/Copilot';
+import ProToggle from './MessageInputActions/Pro';
 import Focus from './MessageInputActions/Focus';
 import Optimization from './MessageInputActions/Optimization';
-import Attach from './MessageInputActions/Attach';
+// import Attach from './MessageInputActions/Attach';
 import { File } from './ChatWindow';
+import Attach from './MessageInputActions/Attach';
 
 const EmptyChatMessageInput = ({
   sendMessage,
@@ -28,7 +30,8 @@ const EmptyChatMessageInput = ({
   files: File[];
   setFiles: (files: File[]) => void;
 }) => {
-  const [copilotEnabled, setCopilotEnabled] = useState(false);
+  // const [copilotEnabled, setCopilotEnabled] = useState(false);
+  const [proEnabled, setProEnabled] = useState(false);
   const [message, setMessage] = useState('');
 
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
@@ -80,7 +83,7 @@ const EmptyChatMessageInput = ({
           onChange={(e) => setMessage(e.target.value)}
           minRows={2}
           className="bg-transparent placeholder:text-black/50 dark:placeholder:text-white/50 text-sm text-black dark:text-white resize-none focus:outline-none w-full max-h-24 lg:max-h-36 xl:max-h-48"
-          placeholder="Ask anything..."
+          placeholder="您问，我们答....."
         />
         <div className="flex flex-row items-center justify-between mt-4">
           <div className="flex flex-row items-center space-x-2 lg:space-x-4">
@@ -93,7 +96,20 @@ const EmptyChatMessageInput = ({
               showText
             />
           </div>
+          
           <div className="flex flex-row items-center space-x-1 sm:space-x-4">
+            <ProToggle
+              proEnabled={proEnabled}
+              setProEnabled={setProEnabled}
+            />
+            <button
+              disabled={message.trim().length === 0}
+              className="bg-[#24A0ED] text-white disabled:text-black/50 dark:disabled:text-white/50 disabled:bg-[#e0e0dc] dark:disabled:bg-[#ececec21] hover:bg-opacity-85 transition duration-100 rounded-full p-2"
+            >
+              <ArrowRight className="bg-background" size={17} />
+            </button>
+          </div>
+          {/* <div className="flex flex-row items-center space-x-1 sm:space-x-4">
             <Optimization
               optimizationMode={optimizationMode}
               setOptimizationMode={setOptimizationMode}
@@ -104,7 +120,7 @@ const EmptyChatMessageInput = ({
             >
               <ArrowRight className="bg-background" size={17} />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </form>

@@ -57,7 +57,7 @@ const Attach = ({
     <div className="flex flex-row items-center justify-between space-x-1">
       <LoaderCircle size={18} className="text-sky-400 animate-spin" />
       <p className="text-sky-400 inline whitespace-nowrap text-xs font-medium">
-        Uploading..
+        上传中..
       </p>
     </div>
   ) : files.length > 0 ? (
@@ -177,7 +177,7 @@ const Attach = ({
         hidden
       />
       <CopyPlus size={showText ? 18 : undefined} />
-      {showText && <p className="text-xs font-medium pl-[1px]">Attach</p>}
+      {showText && <p className="text-xs font-medium pl-[1px] whitespace-nowrap">附加</p>}
     </button>
   );
 };

@@ -16,35 +16,85 @@ import {
 import { SiReddit, SiYoutube } from '@icons-pack/react-simple-icons';
 import { Fragment } from 'react';
 
+// const focusModes = [
+//   {
+//     key: 'webSearch',
+//     title: 'All',
+//     description: 'Searches across all of the internet',
+//     icon: <Globe size={20} />,
+//   },
+//   {
+//     key: 'academicSearch',
+//     title: 'Academic',
+//     description: 'Search in published academic papers',
+//     icon: <SwatchBook size={20} />,
+//   },
+//   {
+//     key: 'writingAssistant',
+//     title: 'Writing',
+//     description: 'Chat without searching the web',
+//     icon: <Pencil size={16} />,
+//   },
+//   {
+//     key: 'wolframAlphaSearch',
+//     title: 'Wolfram Alpha',
+//     description: 'Computational knowledge engine',
+//     icon: <BadgePercent size={20} />,
+//   },
+//   {
+//     key: 'youtubeSearch',
+//     title: 'Youtube',
+//     description: 'Search and watch videos',
+//     icon: (
+//       <SiYoutube
+//         className="h-5 w-auto mr-0.5"
+//         onPointerEnterCapture={undefined}
+//         onPointerLeaveCapture={undefined}
+//       />
+//     ),
+//   },
+//   {
+//     key: 'redditSearch',
+//     title: 'Reddit',
+//     description: 'Search for discussions and opinions',
+//     icon: (
+//       <SiReddit
+//         className="h-5 w-auto mr-0.5"
+//         onPointerEnterCapture={undefined}
+//         onPointerLeaveCapture={undefined}
+//       />
+//     ),
+//   },
+// ];
 const focusModes = [
   {
     key: 'webSearch',
-    title: 'All',
-    description: 'Searches across all of the internet',
+    title: '网络',
+    description: '在整个网络查询',
     icon: <Globe size={20} />,
   },
   {
     key: 'academicSearch',
-    title: 'Academic',
-    description: 'Search in published academic papers',
+    title: '学术',
+    description: '搜索已发表的学术论文',
     icon: <SwatchBook size={20} />,
   },
   {
     key: 'writingAssistant',
-    title: 'Writing',
-    description: 'Chat without searching the web',
+    title: '文档',
+    description: '处理专业文档',
     icon: <Pencil size={16} />,
   },
   {
     key: 'wolframAlphaSearch',
-    title: 'Wolfram Alpha',
-    description: 'Computational knowledge engine',
+    title: '专搜',
+    description: '搜运费、仓库',
     icon: <BadgePercent size={20} />,
   },
   {
     key: 'youtubeSearch',
-    title: 'Youtube',
-    description: 'Search and watch videos',
+    title: '视频',
+    description: '发现并观看视频',
     icon: (
       <SiYoutube
         className="h-5 w-auto mr-0.5"
@@ -55,8 +105,8 @@ const focusModes = [
   },
   {
     key: 'redditSearch',
-    title: 'Reddit',
-    description: 'Search for discussions and opinions',
+    title: '工具',
+    description: '搜索讨论和意见',
     icon: (
       <SiReddit
         className="h-5 w-auto mr-0.5"
@@ -91,7 +141,7 @@ const Focus = ({
         ) : (
           <div className="flex flex-row items-center space-x-1">
             <ScanEye size={20} />
-            <p className="text-xs font-medium hidden lg:block">Focus</p>
+            <p className="text-xs font-medium hidden lg:block">焦点</p>
           </div>
         )}
       </PopoverButton>
